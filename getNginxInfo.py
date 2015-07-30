@@ -19,7 +19,7 @@ import re
 ##
 
 def Usage ():
-        print "Usage: getWowzaInfo.py -h 127.0.0.1 -P 80 -a [active|accepted|handled|request|reading|writting|waiting]"
+        print "Usage: getNginxInfo.py -h 127.0.0.1 -p 80 -a [active|accepted|handled|request|reading|writting|waiting]"
         sys.exit(2)
 
 ##
@@ -48,7 +48,7 @@ def main ():
 	        if opt == "-a" :
         	        getInfo = arg
 
-	url="http://" + host + ":" + port + "/nginx_status/"
+	url="http://" + host + ":" + port + "/nginx_status"
 	request = urllib2.Request(url)
 	result = urllib2.urlopen(request)
 
